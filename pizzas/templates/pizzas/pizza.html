@@ -18,4 +18,11 @@
     <a href="{% url 'pizzas:comment' pizza.id %}">Add a new comment</a>
 </p>
 
+<ul>
+    {% for c in comments %}
+    <l1> {{ c.comment}} </l1>
+    {% empty %}
+    <li> There are no comments for this pizza. </li>
+    {% endfor %}
+</ul>
 {% endblock content %}

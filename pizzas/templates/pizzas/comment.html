@@ -1,23 +1,22 @@
 {% extends "pizzas/base.html" %}
-
-    {% block content %}
-        <p>Add a new comment:</p>
-
-
-        <p><a href="{% url 'pizzas:pizza' pizza.id %}">{{pizza}}</a></p>
-
-        <p> Add a comment: </p>
-
-        <form action="{% url 'pizzas:comment' pizza.id %}" method="'post">
+{% block content %}
+<p>Add a new comment:</p>
 
 
-            {% csrf_token %}
+ <p><a href="{% url 'pizzas:pizza' pizza.id %}">{{pizza}}</a></p>
+
+<p> Add a comment: </p>
+
+<form action="{% url 'pizzas:comment' pizza.id %}" method="'post">
+
+
+        {% csrf_token %}
             
 
-            {{ form.as_p }}
+        {{ form.as_p }}
 
 
-            <button name="submit">Add comment</button>
-        </form>
-
-        {% endblock content %}
+        <button name="submit">Add comment</button>
+</form>
+        
+{% endblock content %}

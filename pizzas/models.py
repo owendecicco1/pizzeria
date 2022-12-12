@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Model
 
 # Create your models here.
 class Pizza(models.Model):
@@ -25,5 +26,9 @@ class Comment(models.Model):
 
   def __str__(self):
         return self.comment
+
+  class Picture(Model):
+    pizza = models.ForeignKey(Pizza,on_delete=models.CASCADE)
+    picture = models.ImageField(upload_to='upload/')
 
 
