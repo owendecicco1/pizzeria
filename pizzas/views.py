@@ -19,7 +19,7 @@ def pizza(request, pizza_id):
     
     comment=Comment.objects.filter(pizza=p)
 
-    pictures =Picture.objects.filter(pizza=p)
+    pictures = Picture.objects.filter(pizza=p)
 
     context ={'pizza':p, 'toppings':toppings, 'comment':comment, 'pictures':pictures}
 
